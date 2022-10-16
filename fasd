@@ -83,8 +83,10 @@ alias a='fasd -a'
 alias s='fasd -si'
 alias sd='fasd -sid'
 alias sf='fasd -sif'
-alias d='fasd -d'
+alias d='fasd_cd -d'
 alias f='fasd -f'
+alias v='fasd -fe vim'
+alias o='a -e xdg-open'
 # function to execute built-in cd
 fasd_cd() {
   if [ \$# -le 1 ]; then
@@ -95,8 +97,7 @@ fasd_cd() {
     [ -d "\$_fasd_ret" ] && cd "\$_fasd_ret" || printf %s\\n "\$_fasd_ret"
   fi
 }
-alias z='fasd_cd -d'
-alias zz='fasd_cd -d -i'
+alias dd='fasd -d'
 
 EOS
         ;;
